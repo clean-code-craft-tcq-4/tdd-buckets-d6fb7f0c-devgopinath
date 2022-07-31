@@ -2,7 +2,7 @@
 #define BMS_H
 
 
-char * getRangeSamples(void);
+char * currentSamples(void);
 
 
 #endif // BMS_H

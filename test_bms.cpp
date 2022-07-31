@@ -3,8 +3,8 @@
 #include "bms.h"
 #include "test/catch.hpp"
 
-TESTCASE("current samples range")
+TEST_CASE("current samples range")
 {
-    REQUIRE(currentSamples() == "4-5, 2");
+    REQUIRE(strcmp(currentSamples(), "4-5, 2"));
 }
 

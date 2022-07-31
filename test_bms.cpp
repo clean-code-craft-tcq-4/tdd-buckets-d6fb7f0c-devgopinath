@@ -5,6 +5,6 @@
 
 TEST_CASE("current samples range")
 {
-    REQUIRE(strcmp(currentSamples(), "4-5, 2"));
+    REQUIRE(strcmp(currentSamples(), "4-5, 2") == 0);
 }
 

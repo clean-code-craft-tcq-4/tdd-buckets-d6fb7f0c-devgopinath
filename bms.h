@@ -11,7 +11,7 @@ typedef struct
 #define GET_HEADER  ("Range, Readings")
 
 
-char * currentSamples(void);
+char * currentSamples(const int * samples, int nSample);
 
 
 #endif // BMS_H

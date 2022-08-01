@@ -54,7 +54,7 @@ void toConsole(const char * msg)
 //     }
 // }
 
-char * currentSamples(void)
+char * currentSamples(const int * samples, int nSample)
 {
     char * msg = "4-5, 2";
     toConsole(GET_HEADER);

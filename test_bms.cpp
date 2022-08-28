@@ -20,6 +20,27 @@ TEST_CASE("check counts")
     }
 }
 
+TEST_CASE("check counts")
+{
+    int iValues[] = {3,4,5,7,6,3};
+    int numValues = 6;
+    int iCounts[MAX_I_VALUE] = {0};
+    int expectediCounts[MAX_I_VALUE] = {0};
+    expectediCounts[3] = 2;
+    expectediCounts[4] = 1;
+    expectediCounts[5] = 1;
+    expectediCounts[6] = 1;
+    expectediCounts[7] = 1;
+
+    REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
+
+    for (int index = 0; index < MAX_I_VALUE; ++index)
+    {
+        REQUIRE(iCounts[index] == expectediCounts[index]);
+    }
+}
+
+
 TEST_CASE("check range counts")
 {
     IRangeCountType iRangeCounts[MAX_NUM_RANGE];
@@ -55,11 +76,3 @@ Input ouput
 {3,4,5,7,6} "3-5, 3" "6-7, 2"
 {3,4,5,7,6,3} "3-5, 3" "6-7, 2"
 */
-
-// TEST_CASE("current samples range")
-// {
-//     int iSamples[] = {4,5};
-//     int nSamples = sizeof(iSamples);
-//     REQUIRE(strcmp(currentSamples((const int *)iSamples, nSamples), "4-5, 2") == 0);
-// }
-

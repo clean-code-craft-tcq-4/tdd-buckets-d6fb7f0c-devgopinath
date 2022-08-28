@@ -35,16 +35,17 @@ int UpdateICounts(const int * iValues, int numValues, int * iCounts)
     for (int index = 0; index < numValues; ++index)
     {
         iValue = iValues[index];
-        if (iValue != 0)
+        if (iValue > MAX_I_VALUE)
         {
-            if (iValue < MAX_I_VALUE)
-            {
-                ++iCounts[iValue];
-            }
-            else
-            {
-                ++discardedIValues;
-            }
+            ++discardedIValues;
+        }
+        else if (iValue > 0)
+        {
+            ++iCounts[iValue];
+        }
+        else
+        {
+            
         }
     }
     return discardedIValues;

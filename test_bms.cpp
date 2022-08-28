@@ -21,7 +21,9 @@ TEST_CASE("check counts")
 TEST_CASE("check range counts")
 {
     IRangeCountType iRangeCounts[MAX_NUM_RANGE];
-    int iCounts[MAX_I_VALUE] = {0,0,0,0,1,1};
+    int iCounts[MAX_I_VALUE] = {0};
+    iCounts[4] = 1;
+    iCounts[5] = 1;
     UpdateIRangeCounts(iCounts, iRangeCounts);
     REQUIRE(iRangeCounts[0].lowerLimit == 4);
     REQUIRE(iRangeCounts[0].upperLimit == 5);

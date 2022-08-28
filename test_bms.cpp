@@ -83,9 +83,29 @@ TEST_CASE("Complete test case")
 
 TEST_CASE("a2d bit array")
 {
-    REQUIRE(A2D_12BitArrayToValue({0,0,0,0, 0,0,0,0, 0,0,0,0}) == 0);
-    REQUIRE(A2D_12BitArrayToValue({0,0,0,0, 0,0,0,0, 0,0,0,1}) == 1);
-    REQUIRE(A2D_12BitArrayToValue({0,1,1,1, 1,1,0,1, 0,0,0,0}) == 2000);
-    REQUIRE(A2D_12BitArrayToValue({1,1,1,1, 1,1,1,1, 1,1,1,0}) == 4094);
-    REQUIRE(A2D_12BitArrayToValue({1,1,1,1, 1,1,1,1, 1,1,1,1}) == 4095);
+    {
+        int a2dBitValues[] = {0,0,0,0, 0,0,0,0, 0,0,0,0};
+        int exptectedValue = 0;
+        REQUIRE(A2D_12BitArrayToValue(a2dBitValues) == exptectedValue);
+    }
+    {
+        int a2dBitValues[] = {0,0,0,0, 0,0,0,0, 0,0,0,1};
+        int exptectedValue = 1;
+        REQUIRE(A2D_12BitArrayToValue(a2dBitValues) == exptectedValue);
+    }
+    {
+        int a2dBitValues[] = {0,1,1,1, 1,1,0,1, 0,0,0,0};
+        int exptectedValue = 2000;
+        REQUIRE(A2D_12BitArrayToValue(a2dBitValues) == exptectedValue);
+    }
+    {
+        int a2dBitValues[] = {1,1,1,1, 1,1,1,1, 1,1,1,0};
+        int exptectedValue = 4094;
+        REQUIRE(A2D_12BitArrayToValue(a2dBitValues) == exptectedValue);
+    }
+    {
+        int a2dBitValues[] = {1,1,1,1, 1,1,1,1, 1,1,1,1};
+        int exptectedValue = 4095;
+        REQUIRE(A2D_12BitArrayToValue(a2dBitValues) == exptectedValue);
+    }
 }

@@ -7,7 +7,7 @@ TEST_CASE("check range counts")
 {
     IRangeCountType iRangeCounts[MAX_NUM_RANGE];
     int iCounts[MAX_I_VALUE] = {0,0,0,0,1,1};
-    UpdateIRangeCounts(iCounts, &iRangeCounts);
+    UpdateIRangeCounts(iCounts, iRangeCounts);
     REQUIRE(iRangeCounts[0].lowerLimit == 4);
     REQUIRE(iRangeCounts[0].upperLimit == 5);
     REQUIRE(iRangeCounts[0].count == 2);

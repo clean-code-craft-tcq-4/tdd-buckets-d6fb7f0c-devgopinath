@@ -13,6 +13,18 @@ void CheckCounts(const int * iValues, int numValues, int * expectediCounts)
         REQUIRE(iCounts[index] == expectediCounts[index]);
     }
 }
+/*
+Input ouput
+{3}
+{3,3}
+{3,4} "3-4, 2"
+{3,3,4} "3-4, 3"
+{3,4,5} "3-5, 3"
+{3,4,5,7} "3-5, 3"
+{3,4,5,7,7} "3-5, 3"
+{3,4,5,7,6} "3-5, 3" "6-7, 2"
+{3,4,5,7,6,3} "3-5, 3" "6-7, 2"
+*/
 
 TEST_CASE("check counts")
 {
@@ -62,15 +74,9 @@ TEST_CASE("output message format")
     REQUIRE(strcmp(outputMsg, "4-7, 9") == 0);
 }
 
-/*
-Input ouput
-{3}
-{3,3}
-{3,4} "3-4, 2"
-{3,3,4} "3-4, 3"
-{3,4,5} "3-5, 3"
-{3,4,5,7} "3-5, 3"
-{3,4,5,7,7} "3-5, 3"
-{3,4,5,7,6} "3-5, 3" "6-7, 2"
-{3,4,5,7,6,3} "3-5, 3" "6-7, 2"
-*/
+TEST_CASE("Complete test case")
+{
+    int iValues[] = {3,4,5,7,6,3};
+    int numValues = 6;
+    ProcessIValues(const int * iValues, int numValues);
+}

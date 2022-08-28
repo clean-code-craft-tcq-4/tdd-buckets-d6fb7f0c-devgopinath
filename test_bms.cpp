@@ -20,7 +20,7 @@ TEST_CASE("check counts")
     }
 }
 
-TEST_CASE("check counts")
+TEST_CASE("check counts 1")
 {
     int iValues[] = {3,4,5,7,6,3};
     int numValues = 6;

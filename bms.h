@@ -17,6 +17,7 @@ i.e., 3 continuous current iValues constitute one range
 #define GET_HEADER  ("Range, Readings")
 
 #define A2D_12BitArrayToValue(nBitValues) A2D_nBitArrayToValue(nBitValues, 12)
+#define A2D_10BitArrayToValue(nBitValues) A2D_nBitArrayToValue(nBitValues, 10)
 
 
 void PrepareRangeMsg(char * ouputMsg, const IRangeCountType * iRangeCount);

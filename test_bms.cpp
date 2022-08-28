@@ -8,7 +8,9 @@ TEST_CASE("check counts")
     int iValues[] = {4,5};
     int numValues = sizeof(iValues);
     int iCounts[MAX_I_VALUE] = {0};
-    int expectediCounts[MAX_I_VALUE] = {0,0,0,0,1,1};
+    int expectediCounts[MAX_I_VALUE] = {0};
+    expectediCounts[4] = 1;
+    expectediCounts[5] = 1;
     REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
     for (int index = 0; index < MAX_I_VALUE; ++index)
     {

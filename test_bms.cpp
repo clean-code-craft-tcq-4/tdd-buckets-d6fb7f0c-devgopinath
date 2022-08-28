@@ -78,5 +78,5 @@ TEST_CASE("Complete test case")
 {
     int iValues[] = {3,4,5,7,6,3};
     int numValues = 6;
-    ProcessIValues(const int * iValues, int numValues);
+    ProcessIValues(iValues, numValues);
 }

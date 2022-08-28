@@ -9,13 +9,20 @@ TEST_CASE("check counts")
     int numValues = sizeof(iValues);
     int iCounts[MAX_I_VALUE] = {0};
     int expectediCounts[MAX_I_VALUE] = {0};
+
+    for (int index = 0; index < MAX_I_VALUE; ++index)
+    {
+        iCounts[index] = 0;
+        expectediCounts[index] = 0;
+    }
     expectediCounts[4] = 1;
     expectediCounts[5] = 1;
+
     REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
-    // for (int index = 0; index < MAX_I_VALUE; ++index)
+
+    for (int index = 0; index < MAX_I_VALUE; ++index)
     {
-        REQUIRE(iCounts[4] == expectediCounts[4]);
-        REQUIRE(iCounts[5] == expectediCounts[5]);
+        REQUIRE(iCounts[index] == expectediCounts[index]);
     }
 }
 

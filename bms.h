@@ -23,5 +23,6 @@ void ProcessIValues(const int * iValues, int numValues);
 int UpdateICounts(const int * iValues, int numValues, int * iCounts);
 void InitRangeCount(IRangeCountType * iRangeCount);
 void UpdateIRangeCounts(const int * iCounts, IRangeCountType * iRangeCount);
+void ProcessRangeCounts(IRangeCountType * iRangeCount);
 
 #endif // BMS_H

@@ -10,7 +10,7 @@ TEST_CASE("output message format")
     iRangeCount.lowerLimit = 4;
     iRangeCount.upperLimit = 7;
     iRangeCount.count = 9;
-    PrepareRangeMsg(&outputMsg, &iRangeCount);
+    PrepareRangeMsg(outputMsg, &iRangeCount);
     REQUIRE(strcmp(outputMsg, "4-7, 9") == 0);
 }
 

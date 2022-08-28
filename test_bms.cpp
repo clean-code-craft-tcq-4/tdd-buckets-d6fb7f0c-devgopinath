@@ -3,28 +3,32 @@
 #include "bms.h"
 #include "test/catch.hpp"
 
-TEST_CASE("check counts")
+void CheckCounts(const int * iValues, int numValues, int * expectediCounts)
 {
-    int iValues[] = {4,5};
-    int numValues = 2;
     int iCounts[MAX_I_VALUE] = {0};
-    int expectediCounts[MAX_I_VALUE] = {0};
-    expectediCounts[4] = 1;
-    expectediCounts[5] = 1;
 
     REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
-
     for (int index = 0; index < MAX_I_VALUE; ++index)
     {
         REQUIRE(iCounts[index] == expectediCounts[index]);
     }
 }
 
+TEST_CASE("check counts")
+{
+    int iValues[] = {4,5};
+    int numValues = 2;
+    int expectediCounts[MAX_I_VALUE] = {0};
+    expectediCounts[4] = 1;
+    expectediCounts[5] = 1;
+
+    CheckCounts(iValues, numValues, expectediCounts);
+}
+
 TEST_CASE("check counts 1")
 {
     int iValues[] = {3,4,5,7,6,3};
     int numValues = 6;
-    int iCounts[MAX_I_VALUE] = {0};
     int expectediCounts[MAX_I_VALUE] = {0};
     expectediCounts[3] = 2;
     expectediCounts[4] = 1;
@@ -32,14 +36,8 @@ TEST_CASE("check counts 1")
     expectediCounts[6] = 1;
     expectediCounts[7] = 1;
 
-    REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
-
-    for (int index = 0; index < MAX_I_VALUE; ++index)
-    {
-        REQUIRE(iCounts[index] == expectediCounts[index]);
-    }
+    CheckCounts(iValues, numValues, expectediCounts);
 }
-
 
 TEST_CASE("check range counts")
 {

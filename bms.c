@@ -21,7 +21,7 @@ void LogRange(const IRangeCountType * iRangeCount)
 
 void ProcessIValues(const int * iValues, int numValues)
 {
-    int iCounts[MAX_I_VALUE];
+    int iCounts[MAX_I_VALUE] = {0};
     IRangeCountType iRangeCounts[MAX_NUM_RANGE];
     (void)UpdateICounts(iValues, numValues, iCounts);
     UpdateIRangeCounts(iCounts, iRangeCounts);

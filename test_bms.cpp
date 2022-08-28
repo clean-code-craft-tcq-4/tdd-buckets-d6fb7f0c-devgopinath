@@ -18,7 +18,7 @@ TEST_CASE("check counts")
     expectediCounts[4] = 1;
     expectediCounts[5] = 1;
 
-    REQUIRE(numValues = 2);
+    REQUIRE(numValues == 2);
 
     REQUIRE(UpdateICounts(iValues, numValues, iCounts) == 0);
 

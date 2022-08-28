@@ -80,3 +80,12 @@ TEST_CASE("Complete test case")
     int numValues = 6;
     ProcessIValues(iValues, numValues);
 }
+
+TEST_CASE("a2d bit array")
+{
+    REQUIRE(A2D_12BitArrayToValue({0,0,0,0, 0,0,0,0, 0,0,0,0}) == 0);
+    REQUIRE(A2D_12BitArrayToValue({0,0,0,0, 0,0,0,0, 0,0,0,1}) == 1);
+    REQUIRE(A2D_12BitArrayToValue({0,1,1,1, 1,1,0,1, 0,0,0,0}) == 2000);
+    REQUIRE(A2D_12BitArrayToValue({1,1,1,1, 1,1,1,1, 1,1,1,0}) == 4094);
+    REQUIRE(A2D_12BitArrayToValue({1,1,1,1, 1,1,1,1, 1,1,1,1}) == 4095);
+}

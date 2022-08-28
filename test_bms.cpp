@@ -3,6 +3,17 @@
 #include "bms.h"
 #include "test/catch.hpp"
 
+TEST_CASE("output message format")
+{
+    IRangeCountType iRangeCount;
+    char outputMsg[30];
+    iRangeCount.lowerLimit = 4;
+    iRangeCount.upperLimit = 7;
+    iRangeCount.count = 9;
+    PrepareRangeMsg(&outputMsg, &iRangeCount);
+    REQUIRE(strcmp(outputMsg, "4-7, 9") == 0);
+}
+
 /*
 Input ouput
 {3}
@@ -16,10 +27,10 @@ Input ouput
 {3,4,5,7,6,3} "3-5, 3" "6-7, 2"
 */
 
-TEST_CASE("current samples range")
-{
-    int iSamples[] = {4,5};
-    int nSamples = sizeof(iSamples);
-    REQUIRE(strcmp(currentSamples((const int *)iSamples, nSamples), "4-5, 2") == 0);
-}
+// TEST_CASE("current samples range")
+// {
+//     int iSamples[] = {4,5};
+//     int nSamples = sizeof(iSamples);
+//     REQUIRE(strcmp(currentSamples((const int *)iSamples, nSamples), "4-5, 2") == 0);
+// }
 

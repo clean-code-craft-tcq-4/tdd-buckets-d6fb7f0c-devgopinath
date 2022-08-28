@@ -5,12 +5,12 @@
 
 TEST_CASE("check range counts")
 {
-    IRangeCountType iRangeCounts;
+    IRangeCountType iRangeCounts[MAX_NUM_RANGE];
     int iCounts[MAX_I_VALUE] = {0,0,0,0,1,1};
     UpdateIRangeCounts(iCounts, &iRangeCounts);
-    REQUIRE(iRangeCounts.lowerLimit == 4);
-    REQUIRE(iRangeCounts.upperLimit == 5);
-    REQUIRE(iRangeCounts.count == 2);
+    REQUIRE(iRangeCounts[0].lowerLimit == 4);
+    REQUIRE(iRangeCounts[0].upperLimit == 5);
+    REQUIRE(iRangeCounts[0].count == 2);
 }
 
 TEST_CASE("output message format")

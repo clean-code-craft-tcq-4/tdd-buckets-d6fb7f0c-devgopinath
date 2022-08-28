@@ -3,6 +3,17 @@
 #include "bms.h"
 #include "test/catch.hpp"
 
+TEST_CASE("check range counts")
+{
+    IRangeCountType iRangeCounts;
+    int iCounts[MAX_I_VALUE] = {[4]=1, [5]=1};
+    int expectediCounts[MAX_I_VALUE] = {[4]=1, [5]=1};
+    UpdateIRangeCounts(iCounts, &iRangeCounts);
+    REQUIRE(iRangeCounts.lowerLimit == 4);
+    REQUIRE(iRangeCounts.upperLimit == 5);
+    REQUIRE(iRangeCounts.count == 2);
+}
+
 TEST_CASE("output message format")
 {
     IRangeCountType iRangeCount;

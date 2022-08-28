@@ -31,7 +31,7 @@ void ProcessIValues(const int * iValues, int numValues)
 int UpdateICounts(const int * iValues, int numValues, int * iCounts)
 {
     int iValue;
-    int discardedIValues;
+    int discardedIValues = 0;
     for (int index = 0; index < numValues; ++index)
     {
         iValue = iValues[index];

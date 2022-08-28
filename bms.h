@@ -27,6 +27,6 @@ void InitRangeCount(IRangeCountType * iRangeCount);
 void UpdateIRangeCounts(const int * iCounts, IRangeCountType * iRangeCount);
 void ProcessRangeCounts(IRangeCountType * iRangeCount);
 
-int A2D_nBitArrayToValue(const int * nBitValues);
+int A2D_nBitArrayToValue(const int * nBitValues, int nBits);
 
 #endif // BMS_H
